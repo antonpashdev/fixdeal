@@ -1,6 +1,5 @@
 .footer-main {
-	padding: 92px 0;
-	background: #1a1b1f;
+	background: $primary-color;
 
 	@include tablet {
 		padding: 50px 0;
@@ -8,8 +7,6 @@
 
 	.block {
 		img {
-			margin-bottom: 20px;
-
 			#small-Apps {
 				fill: red;
 			}
@@ -39,8 +36,7 @@
 	.block-2 {
 		h6 {
 			font-weight: bold;
-			font-size: 14px;
-			text-transform: uppercase;
+			font-size: 16px;
 			color: $light;
 			margin-bottom: 25px;
 		}
@@ -52,15 +48,12 @@
 				margin-bottom: 10px;
 				list-style: none;
 
-				a {
-					font-size: 14px;
-					color: #6f6f71;
-					transition: .2s ease;
+			}
+		}
 
-					&:hover {
-						color: $light;
-					}
-				}
+		a {
+			&:hover {
+				color: $secondary-color;
 			}
 		}
 	}
@@ -106,20 +99,21 @@
 }
 
 // scroll-top-to button
-.scroll-top-to{
+.scroll-top-to {
 	position: fixed;
-	right:20px;
+	right: 20px;
 	bottom: 50px;
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
-	background: $primary-color;
+	background: $secondary-color;
 	color: $light;
 	transition: 0.3s;
 	z-index: 999556;
 	cursor: pointer;
 	display: none;
+
 	&:hover {
 		background: #333;
 	}

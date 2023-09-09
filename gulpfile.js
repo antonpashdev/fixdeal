@@ -19,6 +19,7 @@ var path = {
     js: "source/js/*.js",
     scss: "source/scss/**/*.scss",
     images: "source/images/**/*.+(png|jpg|gif|svg)",
+    fonts: "source/fonts/*.ttf",
   },
   build: {
     dirBuild: "theme/",
@@ -35,15 +36,19 @@ gulp.task("html:build", function () {
         basepath: path.src.incdir,
       })
     )
-    .pipe(
-      comments(`
-    WEBSITE: https://themefisher.com
-    TWITTER: https://twitter.com/themefisher
-    FACEBOOK: https://www.facebook.com/themefisher
-    GITHUB: https://github.com/themefisher/
-    `)
-    )
     .pipe(gulp.dest(path.build.dirDev))
+    .pipe(
+      bs.reload({
+        stream: true,
+      })
+    );
+});
+
+// FONTS
+gulp.task("fonts:build", function () {
+  return gulp
+    .src(path.src.fonts)
+    .pipe(gulp.dest(path.build.dirDev + "css/fonts/"))
     .pipe(
       bs.reload({
         stream: true,
@@ -138,6 +143,7 @@ gulp.task("watch:build", function () {
   gulp.watch(path.src.html, gulp.series("html:build"));
   gulp.watch(path.src.htminc, gulp.series("html:build"));
   gulp.watch(path.src.scss, gulp.series("scss:build"));
+  gulp.watch(path.src.fonts, gulp.series("fonts:build"));
   gulp.watch(path.src.js, gulp.series("js:build"));
   gulp.watch(path.src.images, gulp.series("images:build"));
   gulp.watch(path.src.plugins, gulp.series("plugins:build"));
@@ -151,6 +157,7 @@ gulp.task(
     "html:build",
     "js:build",
     "scss:build",
+    "fonts:build",
     "images:build",
     "plugins:build",
     "others:build",
@@ -169,6 +176,7 @@ gulp.task(
   "build",
   gulp.series(
     "html:build",
+    "fonts:build",
     "js:build",
     "scss:build",
     "images:build",
