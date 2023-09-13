@@ -2,26 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @font-face {
-  font-family: 'BT Beau Sans';
-  src: url('fonts/BT-BeauSans-Bold-BF64d45953acd04.ttf');
+	font-family: 'BT Beau Sans';
+	src: url('fonts/BT-BeauSans-Bold-BF64d45953acd04.ttf');
 	font-weight: bold;
 }
 
 @font-face {
-  font-family: 'BT Beau Sans';
-  src: url('fonts/BT-BeauSans-Medium-BF64d4595383d81.ttf');
+	font-family: 'BT Beau Sans';
+	src: url('fonts/BT-BeauSans-Medium-BF64d4595383d81.ttf');
 	font-weight: 400;
 }
 
 @font-face {
-  font-family: 'BT Beau Sans';
-  src: url('fonts/BT-BeauSans-Regular-BF64d45952e54c1.ttf');
+	font-family: 'BT Beau Sans';
+	src: url('fonts/BT-BeauSans-Regular-BF64d45952e54c1.ttf');
 	font-weight: normal;
 }
 
 @font-face {
-  font-family: 'BT Beau Sans';
-  src: url('fonts/BT-BeauSans-Light-BF64d4595396c6d.ttf');
+	font-family: 'BT Beau Sans';
+	src: url('fonts/BT-BeauSans-Light-BF64d4595396c6d.ttf');
 	font-weight: 300;
 }
 
@@ -80,6 +80,14 @@ cite {
 
 .font-secondary {
 	font-family: $secondary-font !important;
+
+	@include desktop {
+		font-size: 36px;
+	}
+
+	@include mobile-xs {
+		font-size: 28px;
+	}
 }
 
 // Placeholder Color Change
