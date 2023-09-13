@@ -505,14 +505,33 @@ hr {
 	}
 
 	.group-photo {
-		height: 540px;
+		height: 360px;
 		border-radius: 24px;
 		overflow: hidden;
+		margin-bottom: 30px;
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+	}
+
+	.carousel-indicators {
+		top: 100%;
+		bottom: unset;
+
+		li {
+			width: 16px;
+			height: 16px;
+			border-radius: 50px;
+			border: none;
+			margin: 0 10px;
+			background-color: #d9d9d9;
+
+			&.active {
+				background-color: $primary-color;
+			}
 		}
 	}
 }
@@ -595,10 +614,4 @@ input:not([type="checkbox"]) {
 
 .form-check {
 	padding-left: 0;
-}
-
-@media (max-width: 992px) {
-	.navbar-nav__btn a {
-		
-	}
 }

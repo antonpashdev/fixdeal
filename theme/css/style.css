@@ -1242,15 +1242,31 @@ hr {
           backdrop-filter: blur(12px);
 }
 .team .group-photo {
-  height: 540px;
+  height: 360px;
   border-radius: 24px;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 .team .group-photo img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.team .carousel-indicators {
+  top: 100%;
+  bottom: unset;
+}
+.team .carousel-indicators li {
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  border: none;
+  margin: 0 10px;
+  background-color: #d9d9d9;
+}
+.team .carousel-indicators li.active {
+  background-color: #32776E;
 }
 
 .problem .h1 {
