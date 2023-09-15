@@ -1,6 +1,8 @@
 .main-nav {
 	background: $light;
 	z-index: 1;
+	position: sticky;
+	top: 0;
 
 	&__btn {
 		a {

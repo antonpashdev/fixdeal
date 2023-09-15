@@ -144,6 +144,13 @@ ul.social-links li a i {
 
 body {
   overflow-x: hidden;
+  height: 100vh;
+}
+body .wrapper {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .shadow, .coming-soon .block .count-down .syotimer-cell, .user-login .block .image img, .privacy .block, .job-list .block, .team-sm .image img, .founder img, .service .service-box {
@@ -477,6 +484,8 @@ button:focus,
 .main-nav {
   background: #fff;
   z-index: 1;
+  position: sticky;
+  top: 0;
 }
 @media (max-width: 992px) {
   .main-nav__btn a {
@@ -1305,12 +1314,6 @@ input:not([type=checkbox]) {
 .contact-us h3 {
   color: #475467;
   font-weight: 400;
-}
-
-.contact-us h2 {
-  color: #0E0E0E;
-  font-size: 36px;
-  font-weight: 600 !important;
 }
 
 .team-svg {
