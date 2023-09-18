@@ -11,7 +11,7 @@ const rimraf = require("rimraf");
 var path = {
   src: {
     html: "source/*.html",
-    others: "source/*.+(php|ico|png)",
+    others: "source/*.+(php|ico|png|svg|xml|webmanifest)",
     htminc: "source/partials/**/*.htm",
     incdir: "source/partials/",
     plugins: "source/plugins/**/*.*",
@@ -163,6 +163,7 @@ gulp.task(
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build"
+    "plugins:build",
+    "others:build",
   )
 );
