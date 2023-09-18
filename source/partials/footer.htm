@@ -5,12 +5,17 @@
 <script>
   const input = document.querySelector("#validationDefault04");
   const iti = window.intlTelInput(input, {
+    hiddenInput: "full_phone",
     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
   });
-  const countryData = iti.getSelectedCountryData();
-  const countryCode = '+' + countryData.dialCode; // Отримання коду країни (наприклад, "US")
-  console.log(countryCode)
-
+  const message = document.querySelector("#message");
+  const form = document.querySelector("#contact-form");
+  form.addEventListener('submit', function (e) {
+    if (!iti.isValidNumber()) {
+      message.innerHTML = "Invalid number. Please try again.";
+      e.preventDefault();
+    }
+  });
 </script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
